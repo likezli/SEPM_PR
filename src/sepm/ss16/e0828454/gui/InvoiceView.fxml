@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sepm.ss16.e0828454.gui.InvoiceViewController">
+   <children>
+      <TableView fx:id="tableView" prefHeight="500.0" prefWidth="600.0">
+        <columns>
+          <TableColumn fx:id="col_id" editable="false" prefWidth="89.0" text="ID" />
+          <TableColumn fx:id="col_date" editable="false" prefWidth="135.0" text="Date" />
+            <TableColumn fx:id="col_sum" editable="false" prefWidth="98.0" text="Sum" />
+            <TableColumn fx:id="col_count" editable="false" prefWidth="129.0" text="Articles count" />
+            <TableColumn fx:id="col_payment" prefWidth="148.0" text="Payment" />
+        </columns>
+      </TableView>
+      <VBox alignment="TOP_CENTER" layoutX="600.0" prefHeight="230.0" prefWidth="400.0" spacing="30.0">
+         <children>
+            <Button fx:id="invoiceDetailsBtn" mnemonicParsing="false" onAction="#onClickDetailsBtn" text="Show invoice details" />
+            <Button mnemonicParsing="false" onAction="#onClickCreateInvoice" text="Issue an invoice" />
+            <Button fx:id="resetBtn" alignment="TOP_RIGHT" mnemonicParsing="false" onAction="#onClickResetBtn" text="Reset Search">
+               <VBox.margin>
+                  <Insets top="50.0" />
+               </VBox.margin></Button>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets bottom="20.0" top="30.0" />
+         </padding>
+      </VBox>
+      <HBox alignment="CENTER" layoutX="600.0" layoutY="253.0" prefHeight="60.0" prefWidth="400.0" spacing="10.0">
+         <children>
+            <DatePicker fx:id="dateFrom" prefHeight="31.0" prefWidth="180.0" promptText="Pick date From" />
+            <DatePicker fx:id="dateTo" prefHeight="31.0" prefWidth="180.0" promptText="Pick date to" />
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </HBox>
+      <HBox alignment="CENTER" layoutX="600.0" layoutY="313.0" prefHeight="60.0" prefWidth="400.0">
+         <children>
+            <TextField fx:id="sumFrom" onAction="#searchOnEnter" prefHeight="31.0" prefWidth="180.0" promptText="Sum from">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <font>
+                  <Font name="System Italic" size="15.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="sumTo" onAction="#searchOnEnter" prefHeight="31.0" prefWidth="180.0" promptText="Sum to">
+               <HBox.margin>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </HBox.margin>
+               <font>
+                  <Font name="System Italic" size="15.0" />
+               </font>
+            </TextField>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

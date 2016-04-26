@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sepm.ss16.e0828454.gui.StatisticsViewController">
+   <children>
+      <BarChart fx:id="barChart" alternativeRowFillVisible="false" barGap="0.0" legendVisible="false" prefHeight="500.0" prefWidth="650.0">
+        <xAxis>
+          <CategoryAxis endMargin="0.0" label="Article" startMargin="0.0" tickLabelGap="5.0" tickLabelRotation="90.0" tickLength="2.0" fx:id="xAxis" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis fx:id="yAxis" label="Sold" side="LEFT" tickLabelGap="10.0" tickLength="2.0" />
+        </yAxis>
+      </BarChart>
+      <VBox layoutX="650.0" prefHeight="700.0" prefWidth="350.0">
+         <children>
+            <GridPane prefHeight="100.0" prefWidth="350.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="188.0" minWidth="10.0" prefWidth="188.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="170.0" minWidth="10.0" prefWidth="162.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <ComboBox fx:id="articleChooser" editable="true" prefHeight="31.0" prefWidth="171.0" promptText="Choose Article" GridPane.rowIndex="1" />
+                  <Button mnemonicParsing="false" onAction="#onClickShowStatsBtn" text="Show Statistics" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin></Button>
+                  <Label fx:id="articleName" prefHeight="21.0" prefWidth="172.0" wrapText="true" GridPane.rowIndex="2" />
+                  <Label fx:id="articleCount" prefHeight="21.0" prefWidth="87.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets left="40.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label text="Statistics">
+                     <font>
+                        <Font name="System Italic" size="20.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets left="20.0" />
+                     </GridPane.margin>
+                  </Label>
+               </children>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </GridPane>
+            <GridPane maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="495.0" prefWidth="350.0">
+              <columnConstraints>
+                <ColumnConstraints halignment="LEFT" hgrow="ALWAYS" maxWidth="245.0" minWidth="10.0" prefWidth="161.0" />
+                <ColumnConstraints halignment="LEFT" hgrow="ALWAYS" maxWidth="252.0" minWidth="10.0" prefWidth="189.0" />
+              </columnConstraints>
+              <rowConstraints>
+                  <RowConstraints maxHeight="38.0" minHeight="10.0" prefHeight="38.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="38.0" minHeight="10.0" prefHeight="38.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="38.0" minHeight="10.0" prefHeight="38.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="60.0" minHeight="10.0" prefHeight="37.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="43.0" minHeight="10.0" prefHeight="34.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="43.0" minHeight="10.0" prefHeight="5.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="43.0" minHeight="10.0" prefHeight="34.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="43.0" minHeight="10.0" prefHeight="34.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="43.0" minHeight="10.0" prefHeight="34.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="20.0" minHeight="0.0" prefHeight="19.0" vgrow="ALWAYS" />
+                  <RowConstraints maxHeight="98.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="79.0" minHeight="10.0" prefHeight="45.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="72.0" minHeight="10.0" prefHeight="31.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+               <children>
+                  <DatePicker fx:id="datePicker" prefHeight="31.0" prefWidth="139.0" promptText="Choose Date" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </DatePicker>
+                  <Label text="Sold" GridPane.rowIndex="3">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <TextField fx:id="sold_tf" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="31.0" prefWidth="87.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </TextField>
+                  <RadioButton fx:id="minCheck" alignment="TOP_LEFT" mnemonicParsing="false" selected="true" text="Min" GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="4">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </RadioButton>
+                  <RadioButton fx:id="maxCheck" alignment="TOP_LEFT" mnemonicParsing="false" text="Max" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4">
+                     <GridPane.margin>
+                        <Insets left="30.0" />
+                     </GridPane.margin></RadioButton>
+                  <Label text="Min/Max" GridPane.rowIndex="4">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label text="Top/Flop" GridPane.rowIndex="8">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <RadioButton fx:id="topCheck" alignment="TOP_LEFT" disable="true" mnemonicParsing="false" selected="true" text="Top " GridPane.columnIndex="1" GridPane.halignment="LEFT" GridPane.rowIndex="8">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </RadioButton>
+                  <RadioButton fx:id="flopCheck" alignment="TOP_LEFT" disable="true" mnemonicParsing="false" text="Flop" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="8">
+                     <GridPane.margin>
+                        <Insets left="30.0" />
+                     </GridPane.margin></RadioButton>
+                  <Label text="Articles count" GridPane.rowIndex="7">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Spinner fx:id="count" disable="true" prefHeight="31.0" prefWidth="85.0" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                  <Label text="Percentage" GridPane.rowIndex="10">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Label text="Amount" GridPane.rowIndex="11">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <TextField fx:id="amount_tf" maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="31.0" prefWidth="90.0" GridPane.columnIndex="1" GridPane.rowIndex="11" />
+                  <Label text="Pricing">
+                     <GridPane.margin>
+                        <Insets left="20.0" />
+                     </GridPane.margin>
+                     <font>
+                        <Font name="System Italic" size="20.0" />
+                     </font>
+                  </Label>
+                  <Button mnemonicParsing="false" onAction="#onClickAdaptBtn" text="Adapt Price" GridPane.columnIndex="1" GridPane.rowIndex="12" />
+                  <RadioButton fx:id="minMaxCheck" mnemonicParsing="false" text="Pricing over Min/Max sold articles" GridPane.columnSpan="2" GridPane.rowIndex="2">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </RadioButton>
+                  <RadioButton fx:id="topFlopCheck" mnemonicParsing="false" text="Pricing over Best/Low Seller articles" GridPane.columnSpan="2" GridPane.rowIndex="6">
+                     <GridPane.margin>
+                        <Insets left="10.0" />
+                     </GridPane.margin>
+                  </RadioButton>
+                  <ComboBox fx:id="percentage" prefHeight="31.0" prefWidth="90.0" GridPane.columnIndex="1" GridPane.rowIndex="10" />
+               </children>
+            </GridPane>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

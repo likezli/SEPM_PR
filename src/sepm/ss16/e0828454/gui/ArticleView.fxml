@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sepm.ss16.e0828454.gui.ArticleViewController">
+   <children>
+      <TableView fx:id="tableView" prefHeight="500.0" prefWidth="601.0">
+        <columns>
+          <TableColumn fx:id="col_id" editable="false" prefWidth="59.0" text="ID" />
+          <TableColumn fx:id="col_name" editable="false" prefWidth="151.0" text="Name" />
+            <TableColumn fx:id="col_price" editable="false" prefWidth="122.0" text="Price" />
+            <TableColumn fx:id="col_producer" editable="false" prefWidth="153.0" text="Producer" />
+            <TableColumn fx:id="col_sold" editable="false" prefWidth="115.0" text="Sold" />
+        </columns>
+      </TableView>
+      <VBox alignment="TOP_CENTER" layoutX="600.0" prefHeight="500.0" prefWidth="400.0" spacing="10.0">
+         <children>
+            <VBox alignment="CENTER" prefHeight="203.0" prefWidth="400.0">
+               <children>
+                  <ImageView fx:id="articleImageView" fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="false" VBox.vgrow="NEVER">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </ImageView>
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+               </padding>
+            </VBox>
+            <GridPane alignment="CENTER" prefHeight="127.0" prefWidth="315.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="225.0" minWidth="10.0" prefWidth="200.0" />
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="210.0" minWidth="10.0" prefWidth="200.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Button alignment="TOP_LEFT" mnemonicParsing="false" onAction="#onClickEditBtn" text="Edit Selected Article" />
+                  <Button fx:id="deleteBtn" mnemonicParsing="false" onAction="#onClickDeleteBtn" text="Delete Selected Article" GridPane.columnIndex="1" />
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets left="20.0" right="20.0" />
+               </padding>
+            </GridPane>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="createBtn" mnemonicParsing="false" onAction="#onClickNewBtn" text="Create New Article" />
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets bottom="30.0" />
+               </padding>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="resetBtn" alignment="CENTER" mnemonicParsing="false" onAction="#onClickResetBtn" text="Reset Search">
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin></Button>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="31.0" prefWidth="200.0">
+               <children>
+                  <TextField fx:id="nameSearch" onAction="#searchOnEnter" prefHeight="0.0" prefWidth="230.0" promptText="Search for name...">
+                     <font>
+                        <Font name="System Italic" size="15.0" />
+                     </font></TextField>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="0.0" prefWidth="400.0" spacing="10.0">
+               <children>
+                  <TextField fx:id="priceFrom" onAction="#searchOnEnter" prefHeight="31.0" prefWidth="170.0" promptText="Price from">
+                     <font>
+                        <Font name="System Italic" size="15.0" />
+                     </font></TextField>
+                  <TextField fx:id="priceTo" onAction="#searchOnEnter" prefHeight="31.0" prefWidth="170.0" promptText="Price to">
+                     <font>
+                        <Font name="System Italic" size="15.0" />
+                     </font></TextField>
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="0.0" prefWidth="400.0" spacing="10.0">
+               <children>
+                  <TextField fx:id="soldFrom" onAction="#searchOnEnter" prefHeight="31.0" prefWidth="170.0" promptText="Sold from">
+                     <font>
+                        <Font name="System Italic" size="15.0" />
+                     </font></TextField>
+                  <TextField fx:id="soldTo" onAction="#searchOnEnter" prefHeight="31.0" prefWidth="170.0" promptText="Sold to">
+                     <font>
+                        <Font name="System Italic" size="15.0" />
+                     </font></TextField>
+               </children>
+               <VBox.margin>
+                  <Insets bottom="20.0" />
+               </VBox.margin>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
